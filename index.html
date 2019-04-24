@@ -97,16 +97,24 @@
     const state = [['-', '-', '-'],
                    ['-', '-', '-'],
                    ['-', '-', '-']];
+
     function move(element, row, col) {
+if(state[row][col]==="-"){
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
-      element.innerHTML = "x";
-if(!xturn) element.innerHTML = "o";
+      
+if(xturn===true){ element.innerHTML = "X";
+state[row][col]='x';}
+else {element.innerHTML = "O";
+state[row][col]='O';}
        xturn=!xturn;
+ 
 
       document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();
+}
     }
+
     function checkForWin() {
       // Pabaigti;
     }
